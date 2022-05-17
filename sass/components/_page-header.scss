@@ -18,9 +18,6 @@
 /* Меню (новигация) для мобильной версии */
 
 .button-menu {
-    position: fixed;
-    right: 15px;
-    z-index: 1;
     display: inline-flex;
     margin: 0;
     padding: 0;
@@ -53,16 +50,32 @@
 
 .button-menu.is-open .icon-cross {
     display: block;
+    fill: #000;
 }
 
 .button-menu.is-open .icon-menu {
     display: none;
 }
 
+.button-menu.is-open {
+    position: fixed;
+    right: 15px;
+    z-index: 1;
+
+    & .icon-cross {
+        transition-property: fill;
+        transition-duration: 250ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &:hover .icon-cross {
+        fill: $accent-color;
+    }
+}
 
 .navigation-mobile {
     @media screen and (max-width: 767px) {
-        background-color: #ECEC;
+        background-color: $white-color;
         padding: 48px 40px;
         display: none;
         position: fixed;
@@ -75,7 +88,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-    }
+        }
     }
 
     @media screen and (min-width: $tablet) {
@@ -92,7 +105,6 @@
         flex-grow: 1;
     }
 }
-
 
 
 /* Навигации по сайту */

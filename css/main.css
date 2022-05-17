@@ -149,9 +149,6 @@ button {
 
 /* Меню (новигация) для мобильной версии */
 .button-menu {
-  position: fixed;
-  right: 15px;
-  z-index: 1;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -190,15 +187,35 @@ button {
 
 .button-menu.is-open .icon-cross {
   display: block;
+  fill: #000;
 }
 
 .button-menu.is-open .icon-menu {
   display: none;
 }
 
+.button-menu.is-open {
+  position: fixed;
+  right: 15px;
+  z-index: 1;
+}
+
+.button-menu.is-open .icon-cross {
+  -webkit-transition-property: fill;
+  transition-property: fill;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-menu.is-open:hover .icon-cross {
+  fill: #2196f3;
+}
+
 @media screen and (max-width: 767px) {
   .navigation-mobile {
-    background-color: #ECEC;
+    background-color: #ffffff;
     padding: 48px 40px;
     display: none;
     position: fixed;
@@ -1039,8 +1056,8 @@ button {
   .container-contacts {
     text-align: left;
     margin-right: 70px;
-    -ms-flex-wrap: 1;
-        flex-wrap: 1;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }
 
@@ -1170,9 +1187,14 @@ button {
 
 @media screen and (max-width: 1199px) {
   .button, .button--secondary {
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     margin-left: auto;
     margin-right: auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
@@ -1211,7 +1233,7 @@ button {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 452px;
+  width: 450px;
   padding: 40px;
   background: #ffffff;
   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);

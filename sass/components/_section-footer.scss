@@ -31,7 +31,7 @@
     @media screen and (min-width: $desktop) {
         text-align: left;
         margin-right: 70px;
-        flex-wrap: 1;
+        flex-wrap: wrap;
     }
 }
 
@@ -50,7 +50,6 @@
 
     @media screen and (min-width: $desktop) {
         margin-bottom: 9px;
-        
     }
 }
 
@@ -156,9 +155,10 @@
 
 .button {
     @media screen and (max-width: 1199px) {
-        display: block;
+        display: flex;
         margin-left: auto;
         margin-right: auto;
+        align-items: center;
     }
 }
 
