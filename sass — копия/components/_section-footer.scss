@@ -1,0 +1,104 @@
+/* Подвал сайта */
+
+.section-footer {
+    background-color: $background-color-accent;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.container--footer {
+    display: flex;
+    align-items: baseline;
+}
+
+.container-contacts {
+    margin-right: 70px;
+    flex-grow: 1;
+}
+
+/* Контакті в футере */
+
+.footer-contacts {
+    @extend %list;
+}
+
+.footer-contacts__item:not(:last-child) {
+    margin-bottom: 9px;
+}
+
+.footer-contacts__link {
+    font-style: normal;
+    font-size: 14px;
+    letter-spacing: 0.03em;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+        color: $accent-color;
+    }
+}
+
+.footer-contacts__address {
+    font-style: normal;
+    color: $white-color;
+    font-size: 14px;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+        color: $accent-color;
+    }
+}
+
+/* Присоединяйтесь */
+
+.footer-join {
+    margin-right: 93px;
+}
+
+.footer-join__title {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: $white-color;
+    margin-bottom: 20px;
+    margin-top: 0px;
+}
+
+.footer-join__icon {
+    @extend .social__link;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: $white-color;
+}
+
+/* Подписка в футере */
+
+.subscription__input {
+    width: 358px;
+    height: 50px;
+    padding: 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.6);
+    background-color: $background-color-accent;
+    margin-right: 12px;
+}
+
+.social-icon--left {
+    @extend .social-icon;
+    margin-left: 10px;
+}

@@ -2,12 +2,17 @@
 .section-main__title {
     color: $white-color;
     font-weight: 900;
-    font-size: 44px;
-    line-height: 1.36;
+    font-size: 26px;
+    line-height: 1.615;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     margin-top: 0px;
     margin-bottom: 30px;
+
+    @media screen and (min-width: $desktop) {
+        font-size: 44px;
+        line-height: 1.36;
+    }
 }
 
 .section-main {
@@ -19,8 +24,47 @@
 
     background-color: #C4C4C4;
     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-        url("../images/hero.jpg");
+        url("../images/hero1600.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+
+    @media screen and (max-width: 767px) {
+            background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+                url("../images/hero480.jpg");
+        }
+
+    @media screen and (min-width: $tablet) {
+        background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+            url("../images/hero768.jpg");
+    }
+
+    @media screen and (min-width: $desktop) {
+        background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+            url("../images/hero1600.jpg");
+    }
+
 }
+
+
+@media screen and (min-device-pixel-ratino: 2), 
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+        .section-main {
+            @media screen and (max-width: 767px) {
+                background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+                    url("../images/hero480@2x.jpg");
+            }
+
+            @media screen and (min-width: $tablet) {
+                background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+                    url("../images/hero768@2x.jpg");
+            }
+
+            @media screen and (min-width: $desktop) {
+                background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+                    url("../images/hero1600@2x.jpg");
+            }
+        }
+    }
+        

@@ -2,16 +2,31 @@
 
 .button-list {
     display: flex;
-    justify-content: center;
-
+    flex-wrap: wrap;
     @extend %list;
-    margin-bottom: 51px;
+    margin-bottom: 40px;
+    
+    @media screen and (min-width: $tablet) {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+    @media screen and (min-width: $desktop) {
+        margin-bottom: 50px;
+    }
 }
 
 .button-list__item:not(:last-child) {
-    margin-right:
-        8px;
+    margin-right: 8px;
 }
+
+.button-list__item:nth-child(-n + 3) {
+    @media screen and (max-width: 767px) {
+        margin-bottom: 15px;
+    }
+}
+
 
 .button--secondary {
     @extend .button;

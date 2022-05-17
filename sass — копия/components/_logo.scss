@@ -1,0 +1,32 @@
+/* Логотип хедер */
+.logo {
+    @extend %base-logo;
+
+    margin-right: 93px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    @media screen and (max-width: 1199px) {
+        font-size: 50px;
+        line-height: 1.19;
+    }
+}
+
+.logo__web {
+    color: $accent-color;
+}
+
+/* Лого футер */ 
+.logo-footer {
+    @extend %base-logo;
+    color: $white-color;
+
+    margin-bottom: 20px;
+    display: flex;
+
+    @media screen and (min-width: $desktop) {
+        font-size: 30px;
+        line-height: 1.19;
+    }
+}
+
+

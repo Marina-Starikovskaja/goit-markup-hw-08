@@ -2,16 +2,9 @@
 
 .section--no-padding-top {
     padding-top: 0px;
-}
-
-.section__title {
-    color: $title-text-color;
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 1.17;
-    text-align: center;
-    margin-top: 0px;
-    margin-bottom: 50px;
+    @media screen and (max-width: $desktop) {
+        display: none; 
+    }
 }
 
 .activity {

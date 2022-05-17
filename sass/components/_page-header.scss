@@ -1,7 +1,13 @@
 .page-header {
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding-top: 16px;
+    padding-bottom: 16px;
     border-bottom: 1px solid #ECECEC;
+    background-color: $white-color;
+
+    @media screen and (min-width: $tablet) {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
 }
 
 .container__header {
@@ -9,24 +15,126 @@
     align-items: center;
 }
 
+/* Меню (новигация) для мобильной версии */
+
+.button-menu {
+    position: fixed;
+    right: 15px;
+    z-index: 1;
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    margin-left: auto;
+
+    @media screen and (min-width: $tablet) {
+        display: none
+    }
+}
+
+.button-menu__icon {
+    fill: $title-text-color;
+    margin-left: auto;
+    
+    transition-property: fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    .button-menu:hover &,
+    .button-menu:focus & {
+        fill: $accent-color;
+    }
+}
+
+.icon-cross {
+    display: none;
+}
+
+.button-menu.is-open .icon-cross {
+    display: block;
+}
+
+.button-menu.is-open .icon-menu {
+    display: none;
+}
+
+
+.navigation-mobile {
+    @media screen and (max-width: 767px) {
+        background-color: #ECEC;
+        padding: 48px 40px;
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        &.is-open {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+    }
+    }
+
+    @media screen and (min-width: $tablet) {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        flex-grow: 1;
+    }
+
+    @media screen and (min-width: $desktop) {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        flex-grow: 1;
+    }
+}
+
+
+
 /* Навигации по сайту */
 
 .navigation {
-    display: flex;
-    align-items: center;
     @extend %list;
+
+    @media screen and (max-width: 767px) {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        margin-bottom: auto;
+    }
+
+    @media screen and (min-width: $tablet) {
+        display: flex;
+        align-items: center;
+    }
+
+    @media screen and (min-width: $desktop) {
+        margin-right: auto;
+    }
 }
 
 .navigation__item:not(:last-child) {
-    margin-right: 50px;
+    @media screen and (max-width: 767px) {
+        margin-bottom: 32px;
+    }
+    
+    @media screen and (min-width: $tablet) {
+        margin-right: 50px;
+    }
 }
 
 .navigation__link {
     color: $title-text-color;
     text-decoration: none;
+    align-items: center;
+    justify-content: center;
     font-weight: 500;
-    font-size: 14px;
-    line-height: 1.14;
+    font-size: 40px;
+    line-height: 1.175;
     letter-spacing: 0.02em;
     padding-top: 32px;
     padding-bottom: 32px;
@@ -40,6 +148,11 @@
         position: relative;
         color: $accent-color;
     }
+
+    @media screen and (min-width: $tablet) {
+        font-size: 14px;
+        line-height: 1.14;
+    }
 }
 
 /* Подчеркивание активной страницы */
@@ -49,6 +162,7 @@
     color: $accent-color;
 
     &::after {
+        @media screen and (min-width: 768px) {
         content: '';
         position: absolute;
         left: 0;
@@ -59,24 +173,64 @@
         height: 4px;
         background-color: $accent-color;
         border-radius: 2px;
+        }
     }
 }
 
+
 /* Контакты в хедере */
+
+
+.fdgfxgx {
+    @media screen and (min-width: $tablet) {
+        margin-left: auto;
+    }
+
+    @media screen and (min-width: $desktop) {
+
+        margin-left: auto;
+    }
+}
+
 .contacts-list {
-    display: flex;
     @extend %list;
-    margin-left: auto;
+
+    @media screen and (max-width: 767px) {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    @media screen and (max-width: 1199px) {
+        margin-bottom: -5px;
+        margin-top: -5px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        display: flex;
+        flex-direction: row;
+    }
 }
 
 .contacts-list__icon {
     display: flex;
     margin-right: 10px;
+
+    @media screen and (max-width: $tablet) {
+        display: none;
+    }
 }
 
 .contacts-lis__item:not(:last-child) {
-    margin-right: 30px;
+    @media screen and (min-width: $tablet) {
+        margin-bottom: 10px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        margin-bottom: 0;
+        margin-right: 30px;
+    }
 }
+
 
 .contacts-list__link {
     display: flex;
@@ -84,8 +238,8 @@
     color: $primary-text-color;
     text-decoration: none;
     font-weight: 500;
-    font-size: 14px;
-    line-height: 1.14;
+    font-size: 24px;
+    line-height: 1.17;
     letter-spacing: 0.02em;
 
     transition-property: color;
@@ -96,4 +250,50 @@
     &:focus {
         color: $accent-color;
     }
+
+    @media screen and (min-width: $tablet) {
+        font-size: 12px;
+    }
+    @media screen and (min-width: $desktop) {
+        font-size: 14px;
+        line-height: 1.14;
+    }
+}
+
+.contacts-list__link--color {
+    @media screen and (max-width: 767px) {
+        color: $accent-color;
+        font-size: 34px;
+        line-height: 1.176;
+        margin-bottom: 32px;
+    }
+}
+
+/* Социальные сети в мобильно меню */
+
+.social-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    @extend %list;
+    margin-top: 64px;
+
+    @media screen and (min-width: $tablet) {
+        display: none;
+    }
+}
+
+.social-list__item:not(:last-child) {
+    margin-right: 10px;
+    border-right: 1px solid rgba(33, 33, 33, 0.2);
+    padding-right: 10px;
+}
+
+.social-list__link {
+    color: $accent-color;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.22;
+    letter-spacing: 0.02em;
 }
