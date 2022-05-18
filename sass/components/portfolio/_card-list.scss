@@ -78,6 +78,7 @@
 /* Оверлей на странице Портфорило */
 
 .card-work__thumb {
+    z-index: 0;
     position: relative;
     overflow: hidden;
 }

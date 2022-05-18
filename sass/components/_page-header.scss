@@ -2,7 +2,7 @@
     padding-top: 16px;
     padding-bottom: 16px;
     border-bottom: 1px solid #ECECEC;
-    background-color: $white-color;
+    // background-color: $white-color;
 
     @media screen and (min-width: $tablet) {
         padding-top: 25px;
@@ -60,7 +60,7 @@
 .button-menu.is-open {
     position: fixed;
     right: 15px;
-    z-index: 1;
+    z-index: 5;
 
     & .icon-cross {
         transition-property: fill;
@@ -75,6 +75,7 @@
 
 .navigation-mobile {
     @media screen and (max-width: 767px) {
+        z-index: 2;
         background-color: $white-color;
         padding: 48px 40px;
         display: none;

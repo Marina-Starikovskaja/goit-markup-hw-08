@@ -128,7 +128,6 @@ button {
   padding-top: 16px;
   padding-bottom: 16px;
   border-bottom: 1px solid #ECECEC;
-  background-color: #ffffff;
 }
 
 @media screen and (min-width: 768px) {
@@ -197,7 +196,7 @@ button {
 .button-menu.is-open {
   position: fixed;
   right: 15px;
-  z-index: 1;
+  z-index: 5;
 }
 
 .button-menu.is-open .icon-cross {
@@ -215,6 +214,7 @@ button {
 
 @media screen and (max-width: 767px) {
   .navigation-mobile {
+    z-index: 2;
     background-color: #ffffff;
     padding: 48px 40px;
     display: none;
@@ -1636,6 +1636,7 @@ button {
 
 /* Оверлей на странице Портфорило */
 .card-work__thumb {
+  z-index: 0;
   position: relative;
   overflow: hidden;
 }
